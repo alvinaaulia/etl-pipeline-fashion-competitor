@@ -32,6 +32,6 @@ Cocok digunakan oleh analis data, business intelligence engineer, atau tim pemas
 └── test_products.csv
 ```
 
-🔧 Teknologi:
+### Teknologi: </br>
 Python, BeautifulSoup, Pandas, SQLAlchemy, PostgreSQL.
 
