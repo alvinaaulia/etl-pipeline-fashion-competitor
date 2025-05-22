@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+pandas
+numpy
+gspread
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+psycopg2-binary
+coverage

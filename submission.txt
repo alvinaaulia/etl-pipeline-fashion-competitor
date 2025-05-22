@@ -1,0 +1,99 @@
+# SUBMISSION: Uji Unit Test & Coverage - Fashion Studio Scraper Project
+
+✅ Kategori: Advanced (4 poin)
+Proyek ini memenuhi seluruh kriteria penilaian pengujian:
+
+- ✅ Memiliki unit test yang lengkap
+- ✅ Semua file unit test berada di folder `tests/`
+- ✅ Test coverage berada di atas 80%
+- ✅ Semua pengujian berjalan sukses tanpa error
+- ✅ Struktur kode terorganisir (extract, transform, load)
+- ✅ Fungsi diuji: parsing, scraping, transformasi data, validasi, penyimpanan
+
+---
+
+## Struktur Proyek
+
+submission-pemda/
+│
+├── utils/
+│   ├── load.py
+│   ├── extract.py
+│   ├── transform.py
+├── tests/
+│   ├── test_extract.py
+│   ├── test_transform.py 
+│   └── test_load.py
+│
+├── .coverage
+├── main.py
+├── etl-fashion-460408-6eb71c372cbb.json
+├── products.csv
+├── submission.txt
+└── test_products.csv
+---
+
+## ▶️ Cara Menjalankan Pengujian
+
+### 1. Aktifkan environment
+Untuk Windows:
+```
+.\venv\Scripts\activate
+```
+
+Untuk Linux/Mac:
+```
+source venv/bin/activate
+```
+
+---
+
+### 2. Jalankan pengujian unit test + coverage
+```
+coverage run -m unittest discover tests
+```
+
+### 3. Lihat hasil **test coverage**
+```
+coverage report -m
+```
+Output:
+```
+Name                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------
+tests\test_extract.py        47      1    98%   72
+tests\test_load.py           37      1    97%   52
+tests\test_transform.py      17      1    94%   28
+utils\extract.py             66      4    94%   52, 83-85
+utils\load.py                47      9    81%   9, 13, 16, 25-26, 49-50, 61-62
+utils\transform.py           39      3    92%   14, 24, 27
+-------------------------------------------------------
+TOTAL                       253     19    92%
+```
+
+## Modul yang Diuji
+
+### ✔ extract.py
+- `parse_price`, `parse_rating`, `parse_colors`
+- `scrape_page`
+- `extract_all_products`
+
+### ✔ transform.py
+- `transform_data`
+
+### ✔ utils/load.py
+- `validate_data`
+- `save_to_csv`
+- `store_to_postgre` (mocked)
+- `save_to_google_sheets` (mocked)
+
+---
+
+## Catatan Tambahan
+- Pengujian `requests.get`, `gspread`, dan `sqlalchemy.create_engine` telah **dimock** agar tidak bergantung pada koneksi internet atau database eksternal.
+- Semua pengujian menggunakan `unittest` dan `unittest.mock`.
+- Panduan ini telah diuji berjalan di Windows & Linux (Python ≥ 3.8).
+
+---
+
+Terima kasih.
