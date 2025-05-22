@@ -26,7 +26,6 @@ Cocok digunakan oleh analis data, business intelligence engineer, atau tim pemas
 │
 ├── .coverage
 ├── main.py
-├── etl-fashion-460408-6eb71c372cbb.json
 ├── products.csv
 ├── submission.txt
 └── test_products.csv
